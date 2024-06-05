@@ -1,50 +1,38 @@
 const wordList = [
     {
-        word: "piano",
-        hint: "I'm black and white and all strung up."
+        word: "Alan Turing",
+        hint: "A brilliant cryptologist, I developed a decryption machine that helped end WWII."
     },
     {
-        word: "molecule",
-        hint: "I'm too small for the eye to see, but you'd be nothing without me."
+        word: "Marsha P Johnson",
+        hint: "I'm often credited with throwing the first brick during the Stonewall Riots."
     },
     {
-        word: "peanut butter",
-        hint: "Smooth and sweet, I'm nice to eat."
+        word: "Josephine Baker",
+        hint: "With my performing talent, I made a name for myself and was a pioneer for queer womens' rights."
     },
     {
-        word: "basketball",
-        hint: "I'm the color and shape of a fruit, but I probably taste more like a boot."
+        word: "Sally Ride",
+        hint: "I was the first woman in space, and the first queer person in space!"
     },
     {
-        word: "gallows",
-        hint: "You'd better guess me, or this is where you'll be!"
+        word: "Harvey Milk",
+        hint: "I was one of the first openly gay elected officials in the US, and an avid activist."
     },
     {
-        word: "elephant",
+        word: "RuPaul",
         hint: "I make a sound like triumphant brass, but I'd rather eat some grass."
     },
     {
-        word: "heaven",
-        hint: "You'll only get here if you're good."
+        word: "Elliot Page",
+        hint: "My publically documented transition has been an inspiration to countless trans men."
     },
     {
-        word: "wool",
-        hint: "Socks or sweaters are my best use, but idk some pun"
+        word: "Bella Ramsey",
+        hint: "I prefer to be recognized for my acting skills rather than my queerness, but have inspired countless non binary individuals with my openness about gender."
     },
     {
-        word: "window",
-        hint: "When you look at me, what's beyond is what you see."
-    },
-    {
-        word: "staircase",
-        hint: "I'll take you to another place, but get it wrong and I might break your face."
-    },
-    {
-        word: "jazz",
-        hint: "I'll make you dance if you give me the chance."
-    },
-    {
-        word: "sunrise",
-        hint: "To see me you might need a coffee, and though I'm bright I begin softly."
+        word: "Hunter Schafer",
+        hint: "I'm a young actress, best known for my role in Euphoria."
     }
 ]
