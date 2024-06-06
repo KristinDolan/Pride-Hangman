@@ -15,20 +15,36 @@ const resetGame = () => {
     wrongGuessCount = 0;
     hangmanImage.src = "./images/hangman-0.svg";
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
-    wordDisplay.innerHTML = currentWord.split("").map(char => `<li class="letter${char === ' ' ? ' space' : ''}"></li>`).join("");
+    wordDisplay.innerHTML = currentWord.split("").map(char => `<li class="letter${char === ' ' ? ' space' : ''}">${char === ' ' ? '&nbsp;' : ''}</li>`).join("");
     keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
     gameModal.classList.remove("show");
 }
 
+// const getRandomWord = () => {
+//     // Selecting a random word and hint from the wordList
+//     const { words, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+//     currentWord = words.join(" "); // Setting the current word
+
+
+//     // Update the word display element
+//     //const wordDisplay = document.querySelector(".word-display");
+//     wordDisplay.innerHTML = currentWord.split("").map(char =>
+//         `<div class="letter${char === ' ' ? ' space' : ''}">${char === ' ' ? '&nbsp;' : ''}</div>`)
+//     .join("");
+
+//     document.querySelector(".hint-text b").innerHTML = hint; // Update the hint
+
+//     resetGame(); // Resetting the game UI
+// };
+
 const getRandomWord = () => {
     // Selecting a random word and hint from the wordList
     const { words, hint } = wordList[Math.floor(Math.random() * wordList.length)];
+    currentWord = words.join(" "); // Setting the current word
 
-    // Update the word display element
-    const wordDisplay = document.querySelector(".word-display");
-    wordDisplay.innerHTML = words.map(word => 
-        `<div class="word-segment">${word.split('').map(char => `<span class="letter">${char === ' ' ? '&nbsp;' : char}</span>`).join('')}</div>`
-    ).join(" ");
+    wordDisplay.innerHTML = currentWord.split("").map(char =>
+        `<div class="letter${char === ' ' ? ' space' : ''}">${char === ' ' ? '&nbsp;' : ''}</div>`)
+    .join("");
 
     document.querySelector(".hint-text b").innerHTML = hint; // Update the hint
 
@@ -43,29 +59,6 @@ const gameOver = (isVictory) => {
     gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     gameModal.classList.add("show");
 }
-
-// const initGame = (letter) => {
-//     // Checking if clickedLetter is exist on the currentWord
-//     if (currentWord.toLowerCase().includes(letter)) {
-//         // Showing all correct letters on the word display
-//         [...currentWord.toLowerCase()].forEach((char, index) => {
-//             if (char === letter) {
-//                 correctLetters.push(char);
-//                 wordDisplay.querySelectorAll("li")[index].innerText = currentWord[index];
-//                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
-//             }
-//         });
-//     } else {
-//         // If clicked letter doesn't exist then update the wrongGuessCount and hangman image
-//         wrongGuessCount++;
-//         hangmanImage.src = `./images/hangman-${wrongGuessCount}.svg`;
-//     }
-//     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
-
-//     // Calling gameOver function if any of these condition meets
-//     if (wrongGuessCount === maxGuesses) return gameOver(false);
-//     if (correctLetters.length === currentWord.replace(/ /g, '').length) return gameOver(true);
-// }
 
 const initGame = (letter) => {
     // Checking if clickedLetter exists in the currentWord
